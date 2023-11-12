@@ -6,11 +6,11 @@
     const resetBtn = document.getElementById('resetBtn')
     let totalDonuts = 0;
     let autoClickerCount = 0;
-    let autoClickerCost = 100;
+    let autoClickerCost = 10;
 
     resetBtn.addEventListener('click', () =>{
         totalDonuts = 0;
-        autoClickerCost = 0;
+        autoClickerCost = 10;
         autoClickerCount = 0;
         totalElement.innerHTML = totalDonuts
     });
@@ -20,14 +20,18 @@
             totalDonuts -= autoClickerCost;
             autoClickerCount ++;
             totalElement.innerHTML = totalDonuts
-            setInterval(() => {
-                totalDonuts += autoClickerCount
-                totalElement.innerHTML = totalDonuts
-            }, 1000);
-        }
-        autoClickerTotal.innerHTML = autoClickerCount
-    });
-    
+        } 
+        });
+        setInterval(() => {
+            if(totalDonuts < autoClickerCost){
+                autoClickBtn.disabled = true;
+            } else{
+                autoClickBtn.disabled = false;
+            }
+            totalDonuts += autoClickerCount
+            totalElement.innerHTML = totalDonuts
+            autoClickerTotal.innerHTML = autoClickerCount
+        }, 1000);
 
     
     makeDonut.addEventListener('click', () =>{

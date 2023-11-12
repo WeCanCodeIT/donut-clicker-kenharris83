@@ -6,7 +6,7 @@
     const resetBtn = document.getElementById('resetBtn')
     let totalDonuts = 0;
     let autoClickerCount = 0;
-    let autoClickerCost = 10;
+    let autoClickerCost = 100;
 
     resetBtn.addEventListener('click', () =>{
         totalDonuts = 0;

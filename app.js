@@ -1,6 +1,7 @@
     const itemInput = document.getElementById("donuts");
     const makeDonut = document.getElementById("makeDonut");
     const totalElement = document.getElementById("total");
+    const autoClickerTotal = document.getElementById("autoClickers")
     const autoClickBtn = document.getElementById('autoClicker');
     const resetBtn = document.getElementById('resetBtn')
     let totalDonuts = 0;
@@ -24,6 +25,7 @@
                 totalElement.innerHTML = totalDonuts
             }, 1000);
         }
+        autoClickerTotal.innerHTML = autoClickerCount
     });
     
 
